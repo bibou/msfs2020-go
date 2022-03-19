@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
+[ -x "$(command -v go-bindata)" ] && go generate github.com/bibou/msfs2020-go/
 [ -x "$(command -v go-bindata)" ] && go generate github.com/bibou/msfs2020-go/simconnect
 [ -x "$(command -v go-bindata)" ] && go generate github.com/bibou/msfs2020-go/vfrmap
-[ -x "$(command -v go-bindata)" ] && go generate github.com/bibou/msfs2020-go/vfrmap/html
 [ -x "$(command -v go-bindata)" ] && go generate github.com/bibou/msfs2020-go/vfrmap/html/leafletjs
 
 build_time=$(date -u +'%Y-%m-%d_%T')
