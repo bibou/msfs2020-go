@@ -122,7 +122,7 @@
             map.panTo(pos);
           }
       }
-      
+
       function updateHUD(msg) {
         hud.altitude.innerText = msg.altitude;
         hud.heading.innerText = msg.heading;
@@ -156,7 +156,7 @@
       function initMap() {
         var pos = L.latLng(52.4727,-1.7523);
 
-        var osm = new L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        var osm = new L.TileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 18,
           minZoom: 2,
           format: "image/png",
@@ -195,7 +195,7 @@
           format: "image/png",
           subdomains: ["a", "b", "c"]
         });
-        
+
         map = new L.Map("map", {
           layers: [ osm ],
           center: pos,
@@ -208,7 +208,7 @@
         attrib.addAttribution("<a href=\"https://www.openaip.net\" target=\"_blank\" style=\"\">openAIP</a>");
         attrib.addAttribution("<a href=\"http://maps.stamen.com\" target=\"_blank\" style=\"\">Stamen</a>");
         attrib.addAttribution("<a href=\"https://carto.com/\" target=\"_blank\" style=\"\">Carto</a>");
-        
+
         attrib.addTo(map);
 
         var baseMaps = {
@@ -218,7 +218,7 @@
             "Stamen Water": stamen_water,
             "Carto Dark (Night Mode)": carto_dark,
         };
-     
+
         var overlayMaps = {
             "Navigational Data": openaip_cached_basemap,
         };
